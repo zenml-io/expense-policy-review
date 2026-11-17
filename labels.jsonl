@@ -1,0 +1,15 @@
+{"id": "q01", "expected_decision": "approve", "expected_sections": ["POL-MEALS-01", "POL-RECEIPTS-01"], "difficulty": "easy"}
+{"id": "q02", "expected_decision": "deny", "expected_sections": ["POL-MEALS-01"], "difficulty": "easy"}
+{"id": "q03", "expected_decision": "approve", "expected_sections": ["POL-MEALS-01", "POL-RECEIPTS-01"], "difficulty": "medium"}
+{"id": "q04", "expected_decision": "flag_for_review", "expected_sections": ["POL-MEALS-01", "POL-RECEIPTS-01"], "difficulty": "easy"}
+{"id": "q05", "expected_decision": "flag_for_review", "expected_sections": ["POL-MEALS-01"], "difficulty": "medium"}
+{"id": "q06", "expected_decision": "flag_for_review", "expected_sections": ["POL-ALCOHOL-01", "POL-CLIENT-01"], "difficulty": "hard"}
+{"id": "q07", "expected_decision": "deny", "expected_sections": ["POL-ALCOHOL-01"], "difficulty": "easy"}
+{"id": "q08", "expected_decision": "approve", "expected_sections": ["POL-CLIENT-01", "POL-RECEIPTS-01"], "difficulty": "medium"}
+{"id": "q09", "expected_decision": "approve", "expected_sections": ["POL-AIRFARE-01", "POL-RECEIPTS-01"], "difficulty": "easy"}
+{"id": "q10", "expected_decision": "approve", "expected_sections": ["POL-LODGING-01", "POL-RECEIPTS-01"], "difficulty": "hard"}
+{"id": "q11", "expected_decision": "deny", "expected_sections": ["POL-GROUND-01"], "difficulty": "easy"}
+{"id": "q12", "expected_decision": "flag_for_review", "expected_sections": ["POL-HOME-01"], "difficulty": "hard"}
+{"id": "q13", "expected_decision": "deny", "expected_sections": ["POL-GIFTS-01"], "difficulty": "easy"}
+{"id": "q14", "expected_decision": "flag_for_review", "expected_sections": ["POL-SOFTWARE-01", "POL-MEALS-01"], "difficulty": "hard"}
+{"id": "q15", "expected_decision": "flag_for_review", "expected_sections": ["POL-MEALS-01", "POL-SOFTWARE-01"], "difficulty": "hard"}
