@@ -1,0 +1,15 @@
+{"id": "q01", "expense_id": "EXP-1001", "message": "Hi, can you review expense EXP-1001? I bought lunch at Corner Deli on a day I wasn't at my home office."}
+{"id": "q02", "expense_id": "EXP-1002", "message": "Please reimburse EXP-1002. Dinner at The Oak Room while I was on the road."}
+{"id": "q03", "expense_id": "EXP-1003", "message": "EXP-1003 is my meals for one full day, nothing else filed for that date. Can you approve it?"}
+{"id": "q04", "expense_id": "EXP-1004", "message": "I lost the receipt for EXP-1004 at Noodle Bar. Can you still approve it?"}
+{"id": "q05", "expense_id": "EXP-1005", "message": "Please approve EXP-1005. I split a larger dinner across two submissions so this one would fit under the daily cap."}
+{"id": "q06", "expense_id": "EXP-1006", "message": "EXP-1006 is the wine from a client dinner with Acme Robotics. Dana on my team said it was fine to expense."}
+{"id": "q07", "expense_id": "EXP-1007", "message": "Quick one, EXP-1007: a couple of beers at the airport before my flight. No clients."}
+{"id": "q08", "expense_id": "EXP-1008", "message": "EXP-1008 is dinner with Jordan Lee from Northwind Logistics. It was just the two of us, and we didn't order alcohol."}
+{"id": "q09", "expense_id": "EXP-1009", "message": "Need a decision on EXP-1009. Economy flight, Redcedar to Halden, booked three weeks before I flew."}
+{"id": "q10", "expense_id": "EXP-1010", "message": "EXP-1010 is three nights at the Redcedar Inn, 200 a night. Can you review it?"}
+{"id": "q11", "expense_id": "EXP-1011", "message": "EXP-1011 was a rideshare across town to a client site. It was not an airport trip."}
+{"id": "q12", "expense_id": "EXP-1012", "message": "Please look at EXP-1012. It's a standing desk for my home office. I think Facilities already approved it, but I don't have the email on the expense."}
+{"id": "q13", "expense_id": "EXP-1013", "message": "EXP-1013 is a gift basket for our client Pat Okonkwo."}
+{"id": "q14", "expense_id": "EXP-1014", "message": "Can you approve EXP-1014? I submitted it yesterday."}
+{"id": "q15", "expense_id": "EXP-1015", "message": "Please review EXP-1015 when you have a minute."}
