@@ -27,7 +27,7 @@ The Langfuse Python SDK (5.2.0 here) prefers `LANGFUSE_BASE_URL` and still reads
 
 ## Run
 
-`scripts/run_queries.py` sends every line of `queries.jsonl` through the agent and flushes a Langfuse trace. It calls the model. `labels.jsonl` is for later eval work and is not read by the runner.
+`scripts/run_queries.py` sends every line of `queries.jsonl` through the agent and flushes a Langfuse trace. It calls the model. `labels.jsonl` and `label_notes.md` are for later eval work and are not read by the runner.
 
 ```bash
 uv run python scripts/run_queries.py
@@ -72,8 +72,9 @@ A review is roughly 15 to 31 observations because LangGraph adds wrapper chains 
 - `expense_review/policy.py` and top-level `policy.md` — synthetic Lumenfield Analytics policy, ten section ids. `policy.md` is the rendered text of `policy.py`.
 - `expense_review/expenses.py` — in-memory expenses keyed by `expense_id`
 - `expense_review/agent.py` — one `create_agent` graph and the system prompt
-- `queries.jsonl` — 15 employee messages
-- `labels.jsonl` — expected decision, expected section ids, and difficulty, kept out of the queries file
+- `queries.jsonl` — 42 employee messages, all labeled in `labels.jsonl`
+- `queries_pending.jsonl` — q43–q45, parked because the policy does not clearly decide them
+- `labels.jsonl` — expected decision, expected section ids, and difficulty, kept out of the queries file. `labels.jsonl` and `label_notes.md` are for later eval work and are not read by the runner.
 - `scripts/run_queries.py` — traced runs
 
 ## Tests
