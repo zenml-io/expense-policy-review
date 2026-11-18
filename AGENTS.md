@@ -6,6 +6,21 @@ Instructions for coding agents working in this repo. `README.md` covers setup, t
 
 A single LangGraph agent reviews one employee expense against a fictional company policy and answers `approve`, `flag_for_review`, or `deny`. Each run is traced to Langfuse. The company (Lumenfield Analytics), the policy, the employees, and the expenses are all synthetic. Keep it that way: never add real names, companies, or amounts.
 
+## Why it exists
+
+This repo is the stand-in for a production agent in ZenML's content on agent evals: an agent that is already running, with traces already flowing into Langfuse, and no evals yet. `scripts/run_queries.py --repeats N` simulates the traffic. The evals are then built from those traces with Kitaru, outside this repo.
+
+The traces are meant to support four eval angles:
+
+- **Retrieval:** did `search_policy` return the right section?
+- **Decision:** does the decision match the label?
+- **Citation groundedness:** was every cited section actually retrieved?
+- **Ambiguity:** did the agent flag an unclear case instead of guessing?
+
+## The baseline is frozen
+
+Do not edit the system prompt in `agent.py` or the tool behavior in `tools.py` unless the task says so explicitly. The author's baseline run matched the labels on roughly 90% of queries, so some traces are wrong on purpose, and those failures are the material the evals are built on. A "fix" here silently changes every trace generated afterwards. Tagged versions (`v1`, `v1.1`) mark the baselines; a behavior change belongs in a new tag.
+
 ## Commands
 
 ```bash
@@ -46,7 +61,7 @@ Run `uv run pytest` after every change. Do not run `scripts/run_queries.py` unle
 - `check_amount_limit` compares the submitted total with the category's primary cap. It does not divide by nights, attendees, or miles, and it knows nothing about exceptions.
 - `EXP-1015` is filed under `meals` with a software memo.
 
-These gaps are what make the traces worth evaluating. Do not "fix" them unless the task is explicitly to change agent behavior, and say so in the PR if you do.
+These gaps are part of the frozen baseline above. If a task does ask you to change one, say so in the PR.
 
 ## Conventions
 
