@@ -10,6 +10,11 @@ A single LangGraph agent reviews one employee expense against a fictional compan
 
 This repo is the stand-in for a production agent in ZenML's content on agent evals: an agent that is already running, with traces already flowing into Langfuse, and no evals yet. `scripts/run_queries.py --repeats N` simulates the traffic. The evals are then built from those traces with Kitaru, outside this repo.
 
+Readers of that content clone this repo as their starting point: they run the queries into their own Langfuse project and build evals on the result. Two things follow:
+
+- **Keep it small and easy to run.** One agent, a handful of files, `uv sync` and a `.env`. Do not add infrastructure, frameworks, or abstractions a learner would have to read past.
+- **Keep it reproducible.** Someone cloning a tagged version should get the same agent, the same queries, and the same labels as the write-up they are following.
+
 The traces are meant to support four eval angles:
 
 - **Retrieval:** did `search_policy` return the right section?
@@ -20,6 +25,8 @@ The traces are meant to support four eval angles:
 ## The baseline is frozen
 
 Do not edit the system prompt in `agent.py` or the tool behavior in `tools.py` unless the task says so explicitly. The author's baseline run matched the labels on roughly 90% of queries, so some traces are wrong on purpose, and those failures are the material the evals are built on. A "fix" here silently changes every trace generated afterwards. Tagged versions (`v1`, `v1.1`) mark the baselines; a behavior change belongs in a new tag.
+
+If you are a reader experimenting with improvements, that is the point of the exercise: do it on a branch, so you can still compare against the baseline traces.
 
 ## Commands
 
