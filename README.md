@@ -1,6 +1,8 @@
 # Expense policy review
 
-A single LangGraph agent reviews one employee expense against a fictional company policy and records the run in Langfuse. There is no Kitaru code in this repo. All policy text, employees, merchants, and amounts are synthetic.
+A single LangGraph agent, inspired by an expense-policy review, checks one employee expense against a fictional company policy and records the run in Langfuse. There is no Kitaru code in this repo. All policy text, employees, merchants, and amounts are synthetic.
+
+The tools are `get_expense_details`, `search_policy`, `check_amount_limit`, `recommend_decision`, and `flag_for_review`.
 
 The agent looks up the expense, searches the policy, checks the amount against that category's primary cap, and answers with `approve`, `flag_for_review`, or `deny`, plus a short reason and the policy section ids it used. If the policy is ambiguous or required information is missing, it is supposed to flag the expense for a person instead of guessing.
 
@@ -25,7 +27,7 @@ The Langfuse Python SDK (5.2.0 here) prefers `LANGFUSE_BASE_URL` and still reads
 
 ## Run
 
-`scripts/run_queries.py` sends every line of `queries.jsonl` through the agent and flushes a Langfuse trace. It calls the model. It does not read `labels.jsonl`.
+`scripts/run_queries.py` sends every line of `queries.jsonl` through the agent and flushes a Langfuse trace. It calls the model. `labels.jsonl` is for later eval work and is not read by the runner.
 
 ```bash
 uv run python scripts/run_queries.py
@@ -62,6 +64,8 @@ expense-policy-review          chain        user request; trace name, tags, and 
 ```
 
 The probe used a scripted chat model, so each generation is named `ScriptedModel`. A real run names that span `ChatOpenAI`. The root span is type `chain`, not `agent`, because the graph name `expense-policy-review` does not contain "agent". Trace tags were `q01` and `run-1`. Trace metadata held `query_id` and `run_number`. A live model that takes another turn, or that also calls `flag_for_review`, adds another model chain, another generation, and another tools chain plus tool span. That is more than a flat list of five tool steps. The handler does not collapse the LangGraph node wrappers.
+
+A review is roughly 15 to 31 observations because LangGraph adds wrapper chains around every model turn and tool call, with about half being the model and tool calls themselves.
 
 ## Layout
 
